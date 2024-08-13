@@ -35,6 +35,7 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             data[i] = data[i].replace("\"", "");
         }
+        if(data[0].length()>12 || data[1].length()> 12) throw new Exception("Длина строки не должна быть больше 10 считая ковычки ");
 
 
         if (a1 == '+') {
@@ -66,6 +67,9 @@ public class Main {
     }
 
     public static void res1(String dv) {
-        System.out.println("\"" + dv + "\"");
+        if (dv.length()>40){
+            System.out.println("\""+dv.substring(0,40)+"..."+"\"");}
+        else
+            System.out.println("\"" + dv + "\"");
     }
 }
