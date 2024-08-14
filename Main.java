@@ -35,14 +35,12 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             data[i] = data[i].replace("\"", "");
         }
-        if(data[0].length()>12) throw new Exception("Длина строки не должна быть больше 10 считая ковычки ");
+        if(data[0].length()>10) throw new Exception("Длина строки не должна быть больше 10");
 
 
         if (a1 == '+') {
             res1(data[0] + data[1]);
-
         } else if (a1 == '-') {
-            } else if (a1 == '-') {
                 res1(data[0].replaceAll(data[1],"" ));
 
         } else if (a1 == '*') {
