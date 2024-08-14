@@ -35,25 +35,21 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             data[i] = data[i].replace("\"", "");
         }
-        if(data[0].length()>12 || data[1].length()> 12) throw new Exception("Длина строки не должна быть больше 10 считая ковычки ");
+        if(data[0].length()>12) throw new Exception("Длина строки не должна быть больше 10 считая ковычки ");
 
 
         if (a1 == '+') {
             res1(data[0] + data[1]);
 
         } else if (a1 == '-') {
-            int ii = (data[0].indexOf(data[1]));
-            if (ii == -1) {
-                res1(data[0]);
-            } else {
-                String sw = data[0].substring(0, ii);
-                sw += data[0].substring(ii + data[1].length());
-                res1(sw);
-            }
+            } else if (a1 == '-') {
+                res1(data[0].replaceAll(data[1],"" ));
 
         } else if (a1 == '*') {
             StringBuilder res = new StringBuilder();
             int i = Integer.parseInt(data[1]);
+               if (i< 1 || i > 10){throw new Exception("в программе должны приниматься числа от 1 до 10 включительно");
+                                  }
             for (int j = 0; j < i; j++) {
                 res.append(data[0]);
             }
